@@ -10,7 +10,7 @@ app.use(express.json());
 
 
 app.get("/", function(req, res) {
-    res.sendfile(path.join(__dirname, "public/home.html"));
+    res.sendfile(path.join(__dirname, "/public/home.html"));
   });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
