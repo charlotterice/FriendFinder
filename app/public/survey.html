@@ -153,9 +153,9 @@
 
 	<footer>
 		<div class="container">
-			<a href="/api/friends">Discover Friends in Philly API</a>
+			<a href="/api/friends">Explore</a>
 			<span>|</span>
-			<a href="https://github.com/yoonslee/FriendFinder">GitHub Repo</a>
+			<a href="https://github.com/charlotterice/FriendFinder">GitHub Repo</a>
 		</div>
 	</footer>
 
@@ -199,23 +199,12 @@
 			$.post(currentURL + "/api/friends", newUser, function(data) {
 				$("#bestFriend").text(data.name);
 				$("#bestFriendPhoto").attr("src", data.photo);
-				$("#bestFriendModal").modal("toggle");
+				$("#bestMatch").modal("toggle");
 			});
 		} else {
 			// If a required field is missing, show alert
-			alert("Survey is incomplete!");
+			alert("Please complete survey before submitting!");
 		}
 	});
 </script>
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
