@@ -14,9 +14,6 @@
 				<input id="name" type="text" class="form-control" placeholder="Name (Required)">
 			</div>
 			<div class="form-group">
-				<input id="photo" type="text" class="form-control" placeholder="Link to Profile Photo (Required)">
-			</div>
-			<div class="form-group">
 				<label for="question1">I care a lot about what strangers think of me.</label>
 				<select class="form-control" id="question1">
 					<option value="empty"></option>
@@ -170,7 +167,7 @@
 <script type="text/javascript">
 	$("#submitBtn").on("click", function(event) {
 		event.preventDefault();
-		// Form validation
+		//modal
 		var valid = true;
 		if($("#name").val() === "") {
 			valid = false;
@@ -194,14 +191,12 @@
 				]
 			};
 			var currentURL = window.location.origin;
-			// Ajax call for receiving response after POST req
 			$.post(currentURL + "/api/friends", newUser, function(data) {
 				$("#bestFriend").text(data.name);
-				// $("#bestFriendPhoto").attr("src", data.photo);
 				$("#bestMatch").modal("toggle");
 			});
 		} else {
-			// If a required field is missing, show alert
+			// Req'd empty
 			alert("Please complete survey before submitting!");
 		}
 	});
