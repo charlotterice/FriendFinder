@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type: "application/vnd.api+json"}));
-require('./app/routing/api-routes.js')(app);
-require('./app/routing/html-routes.js')(app);
+require('./app/routing/apiRoutes')(app);
+require('./app/routing/htmlRoutes')(app);
 
 app.listen(PORT, function() {
     // Log (server-side) when our server has started

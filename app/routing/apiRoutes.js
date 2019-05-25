@@ -2,15 +2,15 @@ var friends = require("../data/friends");
 
 module.exports = function(app) {
   // Return all friends found in friends.js as JSON
-  app.get("/api/friends", function(req, res) {
-    res.json(friends);
+  app.get("/api/friends", function(request, response) {
+    response.json(friends);
   });
 
-  app.post("/api/friends", function(req, res) {
-    console.log(req.body.scores);
+  app.post("/api/friends", function(request, response) {
+    console.log(request.body.scores);
 
     // Receive user details (name, photo, scores)
-    var user = req.body;
+    var user = request.body;
 
     // parseInt for scores
     for(var i = 0; i < user.scores.length; i++) {
@@ -41,18 +41,6 @@ module.exports = function(app) {
     friends.push(user);
 
     // send back to browser the best friend match
-    res.json(friends[bestFriendIndex]);
+    response.json(friends[bestFriendIndex]);
   });
 };
-© 2019 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
